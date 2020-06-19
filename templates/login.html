@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <style>
+                div  {
+                        background-color: rgb(85, 159, 255);
+                        color: lightblue;
+                        font-family: 'Times New Roman', Times, serif;
+
+                }
+
+                button {
+                        background-color: rgb(124, 187, 230);
+                        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        color: white;
+                }
+                
+        </style>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Login</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+</head>
+
+<body>
+        
+        <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="login" method="post">
+                {% csrf_token %}
+                <font size="4">
+                <div class=login_title style="width: 8cm; height: 1.8cm"><h1>Log in</h1></div>
+                </font>
+                <br>
+                <input type="text" name="username" placeholder="username" style="width: 8cm; height: 1cm"><br>
+                <br>
+                
+                <input type="password" name="password" placeholder="password" style="width: 8cm; height: 1cm"><br>
+                <br>
+                <button class=Login style="height: 1cm; width: 2cm;" color="blue">log in</button>
+
+                <li><a href="register">Don't Have a account? Click Here</a></li>
+        </form>
+        </center>
+
+
+
+
+                                  
+                
+        
+
+
+        
+        <div>  
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+        </div>        
+       
+</body>
+</html>

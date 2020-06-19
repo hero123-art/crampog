@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+                button {
+                        background-color: green;
+
+
+                }
+
+        </style>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Registration</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+</head>
+<body background="{% static 'images/home_slider.jpg' %}">
+        
+                <center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <form action="register" method ="post">
+                        {% csrf_token %}
+                        <input type="text" name="first_name" placeholder="First Name" style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <input type="text" name="last_name" placeholder="Last Name"style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <input type="text" name="username" placeholder="Username" style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <input type="email" name="email" placeholder="email" style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <input type="password" name="password1" placeholder="Password" style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <input type="password" name="password2" placeholder="Confirm Password" style="width: 8cm; height: 1cm"><br>
+                        <br>
+                        <button class="register"style="height: 1cm; width: 3cm;">Register</button>
+                </form>
+                </center>
+                                
+                
+
+
+
+        </form>
+
+        <div>
+                
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+                
+        </div>
+        
+</body>
+</html>
